@@ -10,12 +10,13 @@ load '/usr/local/lib/bats/load.bash'
 
 @test "SpellCheck the readme file" {
   stub docker \
-    "run --rm -ti -v $PWD:/workdir tmaier/markdown-spellcheck:latest --report '*.md'"
-  stub buildkite-agent
-    # 'annotate "Found 2 files matching *.md" : echo Annotation created'
+    "run --rm -ti -v $PWD:/workdir tmaier/markdown-spellcheck:latest --report '*.md' : echo spell check done "
+  stub buildkite-agent \
+   "annotate : echo Annotation added"
   run "$PWD/hooks/command"
   assert_success
-  assert_output --partial "Found 2 files matching *.md"
+  assert_output --partial "spell check done"
+  assert_output --partial "Annotation added"
   unstub buildkite-agent
   unstub docker
 }
