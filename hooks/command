@@ -33,7 +33,5 @@ echo "Printing the bash vari: $BASH_VAR"
 # echo "Printing the sample vari: $SAMPLE_VAR"
 #buildkite-agent annotate "<pre class='term'><code>$FORMATTED_VAR</code></pre>" --style "info"
 #buildkite-agent annotate "$NEW_VAR" --style "warning"
-buildkite-agent annotate "<pre class='term'><code>```term 
-1 | # Spellchecker [31mBuildkite[39m Plugin 
-```</code></pre>" --style "info"
+buildkite-agent annotate "<pre class='term'><code>1 | # Spellchecker <h1>Buildkite</h1> Plugin </code></pre>" --style "info"
 
