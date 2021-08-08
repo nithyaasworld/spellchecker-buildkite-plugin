@@ -7,13 +7,13 @@ A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) to check the s
 ```yml
 steps:
   - plugins:
-      - nithyaasworld/spellchecker#v0.0.2:
+      - nithyaasworld/spellchecker#v0.2.6:
           pattern: '*.md'
 ```
 
 ## Tests
 
-To run the tests of this plugin, run eadfadfa
+To run the tests of this plugin, run 
 ```sh
 docker-compose run --rm tests
 ```

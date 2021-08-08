@@ -7,7 +7,7 @@ steps:
     plugins:
       - plugin-linter#v2.0.0:
           id: nithyaasworld/spellchecker
-  - label: "spell check readme file"
+  - label: "spell check md files"
     plugins:
-      - nithyaasworld/spellchecker#v0.2.5:
+      - nithyaasworld/spellchecker#v0.2.6:
           pattern: '*.md'

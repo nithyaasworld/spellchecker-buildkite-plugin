@@ -3,14 +3,7 @@ set -uo pipefail
 
 SAMPLE_VAR="hello world"
 
-BASH_VAR=$( docker run --rm -ti -v $PWD:/workdir tmaier/markdown-spellcheck:latest --report "*.md" 2>&1 )
-FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m/<h4>/g;s/\[22m/<\/h4>/g;s/\[31m/<div class="inline red border rounded">/g;s/\[39m/<\/div>/g' )
-#FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m//g;s/\[22m//g;s/\[31m\(.*\)\[39m/\1/g' )
+SPELLING_ERR=$( docker run --rm -ti -v $PWD:/workdir tmaier/markdown-spellcheck:latest --report "*.md" 2>&1 )
+FORMATTED_VAR=$( echo $SPELLING_ERR | sed 's/\[1m/<h4>/g;s/\[22m/<\/h4>/g;s/\[31m/<div class="inline red">/g;s/\[39m/<\/div>/g' )
 
-echo "Printing the bash vari: $BASH_VAR"
-# echo "Printing the formatted vari: $FORMATTED_VAR"
-# echo "Printing the sample vari: $SAMPLE_VAR"
 buildkite-agent annotate "<pre class='term'><code>$FORMATTED_VAR</code></pre>" --style "info"
-#buildkite-agent annotate "$NEW_VAR" --style "warning"
-#buildkite-agent annotate "<pre class='term'><code>1 | # Spellchecker <h1>Buildkite</h1> Plugin </code></pre>" --style "info"
-
