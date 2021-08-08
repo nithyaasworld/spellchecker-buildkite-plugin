@@ -7,7 +7,7 @@ A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) to check the s
 ```yml
 steps:
   - plugins:
-      - nithyaasworld/spellchecker#v0.0.1:
+      - nithyaasworld/spellchecker#v0.0.2:
           pattern: '**/*.md'
 ```
 
