@@ -8,7 +8,7 @@ A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) to check the s
 steps:
   - plugins:
       - nithyaasworld/spellchecker#v0.0.1:
-          pattern: '*.md'
+          pattern: '**/*.md'
 ```
 
 ## Tests
