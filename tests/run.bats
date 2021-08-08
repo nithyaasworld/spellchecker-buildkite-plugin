@@ -12,7 +12,7 @@ command_hook="$PWD/hooks/command"
 
 @test "SpellCheck the readme file" {
   stub docker \
-    "run --rm -ti -v $(pwd):/workdir tmaier/markdown-spellcheck:latest --report '*.md'"
+    "run --rm -ti -v $PWD:/workdir tmaier/markdown-spellcheck:latest --report '*.md'"
   stub buildkite-agent
     # 'annotate "Found 2 files matching *.md" : echo Annotation created'
   run "$command_hook"
