@@ -4,7 +4,7 @@ set -uo pipefail
 SAMPLE_VAR="hello world"
 
 BASH_VAR=$( docker run --rm -ti -v $PWD:/workdir tmaier/markdown-spellcheck:latest --report "*.md" 2>&1 )
-FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m/<h3>/g;s/\[22m/<\/h3>/g;s/\[31m//g;s/\[39m//g' )
+FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m/<h4>/g;s/\[22m/<\/h4>/g;s/\[31m/<span style="color: red">/g;s/\[39m/<\/span>/g' )
 #FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m//g;s/\[22m//g;s/\[31m\(.*\)\[39m/\1/g' )
 
 echo "Printing the bash vari: $BASH_VAR"
