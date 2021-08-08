@@ -8,7 +8,6 @@ steps:
       nithyaasworld/spellchecker#v0.0.6:
         pattern: '*.md'
   - label: run bats tests
-    command: cd tests
     plugins:
       - docker-compose#v3.3.0:
           run: tests
