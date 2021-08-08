@@ -5,5 +5,5 @@ echo "build checkout path is: $BUILDKITE_BUILD_CHECKOUT_PATH"
 BASH_VAR=$( docker run --rm -ti -v $(pwd):/workdir tmaier/markdown-spellcheck:latest --report "*.md" 2>&1 )
 FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m//g;s/\[22m//g' )
 
-echo "Printing the updated version: $FORMATTED_VAR"
-buildkite-agent annotate '<pre class="term"><code>$FORMATTED_VAR</code></pre>' --style "info"
+echo "Printing the bash var: $BASH_VAR"
+buildkite-agent annotate <pre class="term"><code>$FORMATTED_VAR</code></pre> --style "info"
