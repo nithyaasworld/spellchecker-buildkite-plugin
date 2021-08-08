@@ -6,4 +6,5 @@ BASH_VAR=$( docker run --rm -ti -v $(pwd):/workdir tmaier/markdown-spellcheck:la
 FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m//g;s/\[22m//g' )
 
 echo "Printing the bash var: $BASH_VAR"
-buildkite-agent annotate <pre class="term"><code>$FORMATTED_VAR</code></pre> --style "info"
+echo "Printing the formatted var: $FORMATTED_VAR"
+buildkite-agent annotate <pre class="term"><code>"$FORMATTED_VAR"</code></pre> --style "info"
