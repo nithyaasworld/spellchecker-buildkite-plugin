@@ -1,0 +1,4 @@
+set -uo pipefail
+BASH_VAR=$( cd .. && docker run --rm -ti -v $(pwd):/workdir tmaier/markdown-spellcheck:latest --report "**/*.md" 2>&1 )
+echo "Printing the errors: $BASH_VAR"
+buildkite-agent annotate ```term $BASH_VAR ``` --style "warning"
