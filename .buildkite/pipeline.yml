@@ -2,4 +2,4 @@ steps:
   - label: ":sparkles: lint"
     plugins:
       plugin-linter#v2.0.0:
-        id: thedyrt/skip-checkout
+        id: nithyaasworld/spellchecker
