@@ -1,13 +1,13 @@
 # Spellchecker Buildkite Plugin
 
-A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) to check the spelling errors in Readme file.
+A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) to check the spelling errors in Markdown files.
 
 ## Example
 
 ```yml
 steps:
   - plugins:
-      - nithyaasworld/spellchecker#v0.2.6:
+      - nithyaasworld/spellchecker#v0.2.9:
           pattern: '*.md'
 ```
 
