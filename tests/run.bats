@@ -8,12 +8,14 @@ load '/usr/local/lib/bats/load.bash'
 #@test "SpellCheck a file with some spelling error" 
 #@test "SpellCheck a file which has no spelling error"
 
+command_hook="$PWD/hooks/command"
+
 @test "SpellCheck the readme file" {
   stub docker \
     "run --rm -ti -v $(pwd):/workdir tmaier/markdown-spellcheck:latest --report '*.md'"
   stub buildkite-agent
     # 'annotate "Found 2 files matching *.md" : echo Annotation created'
-  run "$PWD/hooks/command"
+  run "$command_hook"
   assert_success
   assert_output --partial "Found 2 files matching *.md"
   unstub buildkite-agent
