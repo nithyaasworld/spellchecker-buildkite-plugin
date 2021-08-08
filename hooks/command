@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -uo pipefail
 
 echo "build checkout path is: $BUILDKITE_BUILD_CHECKOUT_PATH"
