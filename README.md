@@ -9,14 +9,8 @@ Optionally sets the checkout directory to a specified path.
 ```yml
 steps:
   - plugins:
-      - nithyaasworld/spellchecker#v0.0.1: ~
-```
-
-```yml
-steps:
-  - plugins:
       - nithyaasworld/spellchecker#v0.0.1:
-          cd: /mnt/data
+          pattern: '*.md'
 ```
 
 ## Tests

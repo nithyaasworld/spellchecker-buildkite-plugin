@@ -4,6 +4,7 @@ author: https://github.com/reidab
 requirements: []
 configuration:
   properties:
-    cd:
+    pattern: 
       type: string
-  required: []
+  required:
+    - pattern
