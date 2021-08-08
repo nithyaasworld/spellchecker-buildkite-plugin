@@ -3,8 +3,8 @@ set -uo pipefail
 
 echo "build checkout path is: $BUILDKITE_BUILD_CHECKOUT_PATH"
 BASH_VAR=$( docker run --rm -ti -v $(pwd):/workdir tmaier/markdown-spellcheck:latest --report "*.md" 2>&1 )
-#FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m//g;s/\[22m//g;s/\[31m//g;s/\[39m//g' )
-FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m//g;s/\[22m//g;s/\[31m\(.*\)\[39m/\1/g' )
+FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m//g;s/\[22m//g;s/\[31m//g;s/\[39m//g' )
+#FORMATTED_VAR=$( echo $BASH_VAR | sed 's/\[1m//g;s/\[22m//g;s/\[31m\(.*\)\[39m/\1/g' )
 
 echo "Printing the bash var: $BASH_VAR"
 buildkite-agent annotate "<pre class='term'><code>$FORMATTED_VAR</code></pre>" --style "info"
