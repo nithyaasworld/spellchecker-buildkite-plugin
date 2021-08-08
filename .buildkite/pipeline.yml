@@ -5,5 +5,5 @@ steps:
         id: nithyaasworld/spellchecker
   - label: "spell check readme file"
     plugins:
-      nithyaasworld/spellchecker#v0.0.2:
-        pattern: '**/*.md'
+      nithyaasworld/spellchecker#v0.0.3:
+        pattern: '*.md'

@@ -13,7 +13,7 @@ steps:
 
 ## Tests
 
-To run the tests of this plugin, run
+To run the tests of this plugin, run eadfadfa
 ```sh
 docker-compose run --rm tests
 ```
