@@ -3,11 +3,11 @@ steps:
     plugins:
       - docker-compose#v3.3.0:
           run: tests
-  # - label: ":sparkles: lint"
-  #   plugins:
-  #     - plugin-linter#v2.0.0:
-  #         id: nithyaasworld/spellchecker
-  # - label: "spell check readme file"
-  #   plugins:
-  #     - nithyaasworld/spellchecker#v0.1.7:
-  #         pattern: '*.md'
+  - label: ":sparkles: lint"
+    plugins:
+      - plugin-linter#v2.0.0:
+          id: nithyaasworld/spellchecker
+  - label: "spell check readme file"
+    plugins:
+      - nithyaasworld/spellchecker#v0.1.7:
+          pattern: '*.md'
