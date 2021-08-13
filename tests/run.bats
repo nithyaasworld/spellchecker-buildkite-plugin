@@ -15,6 +15,7 @@ load '/usr/local/lib/bats/load.bash'
    "annotate : echo Annotation added"
   run "$PWD/hooks/command"
   assert_success
+   assert_output --partial "spell check done"
   assert_output --partial "Annotation added"
   unstub buildkite-agent
   unstub docker
