@@ -1,6 +1,6 @@
-name: Skip Checkout
-description: Skips the default Buildkite and optionally changes to a specified directory
-author: https://github.com/reidab
+name: Spell Checker
+description: Checks the spelling of all mark down files present in the root directory of the project
+author: https://github.com/nithyaasworld
 requirements: []
 configuration:
   properties:
