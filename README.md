@@ -2,7 +2,7 @@
 
 A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) to check the spelling errors in Markdown files. 
 
-This uses the docker image [tmaier/markdown-spellcheck](https://hub.docker.com/r/tmaier/markdown-spellcheck)  to spell check all the md files present in the root directory of the project.
+This uses the docker image [tmaier/markdown-spellcheck](https://hub.docker.com/r/tmaier/markdown-spellcheck) to spell check all the md files present in the root directory of the project. Once the spell-check is done, results are annotated in the buildkite web-interface.
 
 ## Example
 
